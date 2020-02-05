@@ -11,6 +11,13 @@ public class WormsController : MonoBehaviour
     public float ammospeed;
     public Rigidbody projectile;
     public Transform Spawnpoint;
+    
+    
+    public KeyCode ShootKey;
+    public KeyCode LeftKey;
+    public KeyCode RightKey;
+    public KeyCode JumpKey;
+    public KeyCode SpecialityKey;
     void Start()
     {
         
@@ -18,27 +25,31 @@ public class WormsController : MonoBehaviour
 
     void Update()
     {
-       if (Input.GetKeyDown(KeyCode.Space))
+       if (Input.GetKeyDown(JumpKey))
        {
            Vector3 force = new Vector3(0, jumpHeight, 0);
            rb.AddForce(force, ForceMode.Impulse);
            Debug.Log("Die Leertaste wurde gedrückt");
        }
-       if (Input.GetKey(KeyCode.D))
+       if (Input.GetKeyDown(RightKey))
        {
            Vector3 move = new Vector3(movement, 0, 0);
            rb.AddForce(move, ForceMode.Force);
            Debug.Log("D wurde gedrückt");
+           transform.eulerAngles = new Vector3(0, 180 ,0);
+           ammospeed = -ammospeed;
        }
-       if (Input.GetKey(KeyCode.A))
+       if (Input.GetKeyDown(LeftKey))
        {
            Vector3 move = new Vector3(movement * (-1), 0, 0);
            rb.AddForce(move, ForceMode.Force);
            Debug.Log("A wurde gedrückt");
+           transform.eulerAngles = new Vector3(0, 0 ,0);
+
        }
-       if (Input.GetButtonDown("Fire1"))
+       if (Input.GetKeyDown(ShootKey))
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 1; i++)
             {
             Rigidbody clone;
             clone = Instantiate(projectile, Spawnpoint.position, transform.rotation);
@@ -47,7 +58,7 @@ public class WormsController : MonoBehaviour
             clone.AddForce(pSpeed);
             }
         }
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(SpecialityKey))
         {
             for (int i = 0; i < 50; i++)
             {
