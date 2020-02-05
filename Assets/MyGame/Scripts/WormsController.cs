@@ -7,8 +7,9 @@ public class WormsController : MonoBehaviour
     public Rigidbody rb;
     public float jumpHeight;
     public float movement;
-    
-
+    public Vector3 ammospeed;
+    public Rigidbody projectile;
+    public GameObject positionObject;
     void Start()
     {
         
@@ -34,5 +35,23 @@ public class WormsController : MonoBehaviour
            rb.AddForce(move, ForceMode.Force);
            Debug.Log("A wurde gedrückt");
        }
+       if (Input.GetButtonDown("Fire1"))
+        {
+            for (int i = 0; i < 3; i++)
+            {
+            Rigidbody clone;
+            clone = Instantiate(projectile, transform.position, transform.rotation);
+            clone.velocity = transform.TransformDirection(Vector3.right * 25);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+            Rigidbody clone;
+            clone = Instantiate(projectile, transform.position, transform.rotation);
+            clone.velocity = transform.TransformDirection(Vector3.right * 18);
+            }
+        }
     }
 }
