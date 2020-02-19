@@ -370,6 +370,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2153227532266535281, guid: 0f86aee09f29e4cebb4276c636308b69,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2153227532266535290, guid: 0f86aee09f29e4cebb4276c636308b69,
         type: 3}
       propertyPath: ShootKey
@@ -393,7 +398,12 @@ PrefabInstance:
     - target: {fileID: 2153227532266535290, guid: 0f86aee09f29e4cebb4276c636308b69,
         type: 3}
       propertyPath: SpecialityKey
-      value: 42
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153227532266535290, guid: 0f86aee09f29e4cebb4276c636308b69,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f86aee09f29e4cebb4276c636308b69, type: 3}
