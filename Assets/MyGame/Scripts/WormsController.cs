@@ -56,6 +56,7 @@ public class WormsController : MonoBehaviour
             Vector3 pSpeed = new Vector3(ammospeed, 0, 0);
             
             clone.AddForce(pSpeed);
+            Destroy(clone.gameObject, 1.5f);
             }
         }
         if (Input.GetKeyDown(SpecialityKey))
@@ -68,7 +69,9 @@ public class WormsController : MonoBehaviour
             Vector3 pSpeed = new Vector3(laser, 0, 0);
             
             clone.AddForce(pSpeed);
+            Destroy(clone.gameObject, 3.0f);
             }
         }
+        
     }
 }
