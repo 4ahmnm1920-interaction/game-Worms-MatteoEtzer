@@ -31,20 +31,30 @@ public class WormsController : MonoBehaviour
            rb.AddForce(force, ForceMode.Impulse);
            Debug.Log("Die Leertaste wurde gedrückt");
        }
-       if (Input.GetKeyDown(RightKey))
+       if (Input.GetKey(RightKey))
        {
            Vector3 move = new Vector3(movement, 0, 0);
            rb.AddForce(move, ForceMode.Force);
            Debug.Log("D wurde gedrückt");
            transform.eulerAngles = new Vector3(0, 180 ,0);
-           ammospeed = -ammospeed;
+           if (ammospeed > 1)
+            {
+                ammospeed = -ammospeed;
+                laser = - laser;
+
+            }
        }
-       if (Input.GetKeyDown(LeftKey))
+       if (Input.GetKey(LeftKey))
        {
            Vector3 move = new Vector3(movement * (-1), 0, 0);
            rb.AddForce(move, ForceMode.Force);
            Debug.Log("A wurde gedrückt");
            transform.eulerAngles = new Vector3(0, 0 ,0);
+           if (ammospeed < 1)
+           {
+               ammospeed = - ammospeed;
+               laser = - laser;
+           }
 
        }
        if (Input.GetKeyDown(ShootKey))
@@ -57,6 +67,7 @@ public class WormsController : MonoBehaviour
             
             clone.AddForce(pSpeed);
             Destroy(clone.gameObject, 1.5f);
+
             }
         }
         if (Input.GetKeyDown(SpecialityKey))
@@ -64,7 +75,6 @@ public class WormsController : MonoBehaviour
             for (int i = 0; i < 50; i++)
             {
             Rigidbody clone;
-            rb.mass = 1;
             clone = Instantiate(projectile, Spawnpoint.position, transform.rotation);
             Vector3 pSpeed = new Vector3(laser, 0, 0);
             
