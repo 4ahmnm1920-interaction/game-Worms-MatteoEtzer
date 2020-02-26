@@ -12,7 +12,6 @@ public class WormsController : MonoBehaviour
     public Rigidbody projectile;
     public Transform Spawnpoint;
     
-    
     public KeyCode ShootKey;
     public KeyCode LeftKey;
     public KeyCode RightKey;
@@ -29,13 +28,13 @@ public class WormsController : MonoBehaviour
        {
            Vector3 force = new Vector3(0, jumpHeight, 0);
            rb.AddForce(force, ForceMode.Impulse);
-           Debug.Log("Die Leertaste wurde gedrückt");
+           //Debug.Log("Die Leertaste wurde gedrückt");
        }
        if (Input.GetKey(RightKey))
        {
            Vector3 move = new Vector3(movement, 0, 0);
            rb.AddForce(move, ForceMode.Force);
-           Debug.Log("D wurde gedrückt");
+           //Debug.Log("D wurde gedrückt");
            transform.eulerAngles = new Vector3(0, 180 ,0);
            if (ammospeed > 1)
             {
@@ -48,7 +47,7 @@ public class WormsController : MonoBehaviour
        {
            Vector3 move = new Vector3(movement * (-1), 0, 0);
            rb.AddForce(move, ForceMode.Force);
-           Debug.Log("A wurde gedrückt");
+           //Debug.Log("A wurde gedrückt");
            transform.eulerAngles = new Vector3(0, 0 ,0);
            if (ammospeed < 1)
            {
