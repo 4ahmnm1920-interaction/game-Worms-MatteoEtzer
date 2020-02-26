@@ -373,7 +373,7 @@ PrefabInstance:
     - target: {fileID: 2153227532266535281, guid: 0f86aee09f29e4cebb4276c636308b69,
         type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2153227532266535290, guid: 0f86aee09f29e4cebb4276c636308b69,
         type: 3}
@@ -403,7 +403,7 @@ PrefabInstance:
     - target: {fileID: 2153227532266535290, guid: 0f86aee09f29e4cebb4276c636308b69,
         type: 3}
       propertyPath: jumpHeight
-      value: 200
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f86aee09f29e4cebb4276c636308b69, type: 3}
